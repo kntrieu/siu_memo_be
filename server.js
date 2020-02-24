@@ -32,12 +32,12 @@ app.use(bodyParser.json())
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Welcome to my application. Take Memo quickly. Organize and keep track of all your memos."});
 });
 
 require('./app/routes/memo.routes.js')(app);
 
 // listen for requests
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+app.listen(8080, () => {
+    console.log("Server is listening on port 8080");
 });
