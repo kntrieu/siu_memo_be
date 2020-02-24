@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+var port = process.env.PORT || 3030;
 
 mongoose.Promise = global.Promise;
 
@@ -38,6 +39,6 @@ app.get('/', (req, res) => {
 require('./app/routes/memo.routes.js')(app);
 
 // listen for requests
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080");
+app.listen(port, () => {
+    console.log("Server is listening on port " + port);
 });
