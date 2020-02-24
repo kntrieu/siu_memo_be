@@ -38,6 +38,6 @@ app.get('/', (req, res) => {
 require('./app/routes/memo.routes.js')(app);
 
 // listen for requests
-app.listen(3030, () => {
-    console.log("Server is listening on port 3030");
+app.listen(3000, () => {
+    console.log("Server is listening on port 3000");
 });
