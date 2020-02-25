@@ -12,7 +12,7 @@ exports.create = (req, res) => {
 
     // Create a memo
     const memo = new Memo({
-        name: req.body.title || "Untitled Note", 
+        name: req.body.name || "Untitled Note", 
         content: req.body.content,
         create_date: new Date().toISOString(),
         user_id: "",
@@ -34,7 +34,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Memo.find()
     .then(memos => {
-        res.send(memos);
+        res.status(200).send(memos);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving notes."
@@ -75,8 +75,8 @@ exports.update = (req, res) => {
 
     // Find note and update it with the request body
     Memo.findByIdAndUpdate(req.params.memoId, {
-        title: req.body.title || "Untitled Memo",
-        content: req.body.content
+        name: req.body.name || "Untitled Memo",
+        content: req.body.content,
     }, {new: true})
     .then(memo => {
         if(!memo) {
