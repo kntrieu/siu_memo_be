@@ -14,11 +14,12 @@ exports.create = (req, res) => {
     const memo = new Memo({
         name: req.body.name || "Untitled Note", 
         content: req.body.content,
+        from: req.body.from,
+        to: req.body.to,
         created_date: new Date().toISOString(),
         user_id: "",
         color: ""
     });
-
 
     // Save Note in the database
     memo.save()
@@ -78,6 +79,8 @@ exports.update = (req, res) => {
     Memo.findByIdAndUpdate(req.params.memoId, {
         name: req.body.name || "Untitled Memo",
         content: req.body.content,
+        from: req.body.from,
+        to: req.body.to,
     }, {new: true})
     .then(memo => {
         if(!memo) {

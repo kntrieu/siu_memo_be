@@ -6,7 +6,9 @@ const MemoSchema = mongoose.Schema({
     created_date: String,
     content: String,
     user_id: String,
-    color: String
+    color: String,
+    from: String,
+    to: String
 
 }, {
     timestamps: true
