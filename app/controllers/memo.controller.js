@@ -14,10 +14,11 @@ exports.create = (req, res) => {
     const memo = new Memo({
         name: req.body.name || "Untitled Note", 
         content: req.body.content,
-        create_date: new Date().toISOString(),
+        created_date: new Date().toISOString(),
         user_id: "",
         color: ""
     });
+
 
     // Save Note in the database
     memo.save()
