@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 
 let tokenList = {};
 
-const accessTokenLife = process.env.ACCESS_TOKEN_LIFE || "1m";
+const accessTokenLife = process.env.ACCESS_TOKEN_LIFE || "1h";
 
 const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "access-token-secret-example-trungquandev.com-green-cat-a@";
 
