@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 var port = process.env.PORT || 3030;
+const initAPIs = require("./app/routes/api");
 
 mongoose.Promise = global.Promise;
 
@@ -36,8 +37,8 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to my application. Take Memo quickly. Organize and keep track of all your memos."});
 });
 
-require('./app/routes/memo.routes.js')(app);
-require('./app/routes/user.routes.js')(app);
+initAPIs(app);
+
 
 // listen for requests
 app.listen(port, () => {
