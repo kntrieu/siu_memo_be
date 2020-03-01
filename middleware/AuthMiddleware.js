@@ -3,7 +3,7 @@ const jwtHelper  = require('../helpers/jwt.helper');
 
 const debug = console.log.bind(console);
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "access-token-secret-example-trungquandev.com-green-cat-a@";
+const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "access-token-secret-example-kntrieumemoapp.com-green-cat-a@";
 
 
 let isAuth = async (req, res, next) => {
